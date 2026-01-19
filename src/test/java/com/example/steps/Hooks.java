@@ -11,8 +11,11 @@ import java.net.MalformedURLException;
 public class Hooks {
 
     @Before
-    public void setUp() throws MalformedURLException {
+    public void setUp(Scenario scenario) throws MalformedURLException {
         DriverFactory.initializeDriver();
+        if (DriverFactory.getDriver() != null) {
+            ((JavascriptExecutor) DriverFactory.getDriver()).executeScript("sauce:context=" + scenario.getName());
+        }
     }
 
     @After

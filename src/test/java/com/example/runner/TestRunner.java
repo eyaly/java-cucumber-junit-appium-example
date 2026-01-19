@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "com.example.steps",
-        plugin = {"pretty", "html:target/cucumber-reports.html"},
+        plugin = {"pretty", "html:target/cucumber-reports.html", "com.example.utils.SauceStepListener"},
         monochrome = true,
         tags = "@saucelabs"
 )
