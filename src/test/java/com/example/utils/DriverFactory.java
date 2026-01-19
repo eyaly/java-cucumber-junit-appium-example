@@ -11,6 +11,10 @@ public class DriverFactory {
     private static AndroidDriver driver;
 
     public static void initializeDriver() throws MalformedURLException {
+
+        String username = System.getenv("SAUCE_USERNAME");
+        String accessKey = System.getenv("SAUCE_ACCESS_KEY");
+
         MutableCapabilities caps = new MutableCapabilities();
         caps.setCapability("platformName", "Android");
         caps.setCapability("browserName", "Chrome");
@@ -19,8 +23,8 @@ public class DriverFactory {
 
         MutableCapabilities sauceOptions = new MutableCapabilities();
         sauceOptions.setCapability("appiumVersion", "latest");
-        sauceOptions.setCapability("username", System.getenv("SAUCE_USERNAME"));
-        sauceOptions.setCapability("accessKey", System.getenv("SAUCE_ACCESS_KEY"));
+        sauceOptions.setCapability("username", username);
+        sauceOptions.setCapability("accessKey", accessKey);
         sauceOptions.setCapability("build", "appium-build-1");
         sauceOptions.setCapability("name", "Login Scenario");
 

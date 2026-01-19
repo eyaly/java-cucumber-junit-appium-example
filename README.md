@@ -71,5 +71,5 @@ SAUCE_USERNAME=your_username SAUCE_ACCESS_KEY=your_access_key mvn clean test
 mvn clean test
 ```
 
-4. Once the tests complete, go to your Sauce Labs dashboard to view the execution. You will see the job name matching your scenario, and under the "Context" tab (or logs), you will see the individual Cucumber steps.
+4. Once the tests complete, go to your Sauce Labs dashboard to view the execution. 
 
